@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FEC6C971D6D0A8C00F448AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC6C961D6D0A8C00F448AE /* Assets.xcassets */; };
+		3FEC6C9A1D6D0A8C00F448AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC6C981D6D0A8C00F448AE /* LaunchScreen.storyboard */; };
+		3FEC6CA61D6D0CE400F448AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CA51D6D0CE400F448AE /* AppDelegate.swift */; };
+		3FEC6CA81D6D0CF500F448AE /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CA71D6D0CF500F448AE /* EditViewController.swift */; };
+		3FEC6CAA1D6D0D0C00F448AE /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC6CA91D6D0D0C00F448AE /* EditViewController.xib */; };
+		3FEC6CB61D6D0DE300F448AE /* CYRLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CAE1D6D0DE300F448AE /* CYRLayoutManager.m */; };
+		3FEC6CB71D6D0DE300F448AE /* CYRTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CB01D6D0DE300F448AE /* CYRTextStorage.m */; };
+		3FEC6CB81D6D0DE300F448AE /* CYRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CB21D6D0DE300F448AE /* CYRTextView.m */; };
+		3FEC6CB91D6D0DE300F448AE /* CYRToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CB51D6D0DE300F448AE /* CYRToken.m */; };
+		3FEC6CBE1D6D12AD00F448AE /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CBC1D6D12AD00F448AE /* TopViewController.swift */; };
+		3FEC6CBF1D6D12AD00F448AE /* TopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC6CBD1D6D12AD00F448AE /* TopViewController.xib */; };
+		3FEC6CC21D6D15B000F448AE /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CC11D6D15B000F448AE /* FileInfo.swift */; };
+		3FEC6CC41D6DB56B00F448AE /* BaseTableVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CC31D6DB56B00F448AE /* BaseTableVIewController.swift */; };
+		3FEC6CC61D6DB67C00F448AE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CC51D6DB67C00F448AE /* BaseViewController.swift */; };
+		3FEC6CC91D6E390500F448AE /* CreateFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CC71D6E390500F448AE /* CreateFileViewController.swift */; };
+		3FEC6CCA1D6E390500F448AE /* CreateFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC6CC81D6E390500F448AE /* CreateFileViewController.xib */; };
+		3FEC6CCE1D6E3D9700F448AE /* Config.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC6CCD1D6E3D9700F448AE /* Config.txt */; };
+		3FEC6CD01D6E3DCF00F448AE /* ConfigUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CCF1D6E3DCF00F448AE /* ConfigUtils.swift */; };
+		3FEC6CD21D6E3E1600F448AE /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD11D6E3E1600F448AE /* FileUtils.swift */; };
+		3FEC6CD41D6E423200F448AE /* CommonConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD31D6E423200F448AE /* CommonConst.swift */; };
+		3FEC6CD61D6E4A7000F448AE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */; };
+		53A7FE98CCEFB40EC00A9E0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F30907992A4EDC3B9A2014C /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		24FABDDA7E4D8E3D6EE85FBF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3FEC6C8C1D6D0A8B00F448AE /* PWSimpleEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWSimpleEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FEC6C961D6D0A8C00F448AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FEC6C991D6D0A8C00F448AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3FEC6C9B1D6D0A8C00F448AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FEC6CA41D6D0CE300F448AE /* PWSimpleEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PWSimpleEditor-Bridging-Header.h"; sourceTree = "<group>"; };
+		3FEC6CA51D6D0CE400F448AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
+		3FEC6CA71D6D0CF500F448AE /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditViewController.swift; path = Classes/ViewControllers/EditViewController.swift; sourceTree = "<group>"; };
+		3FEC6CA91D6D0D0C00F448AE /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditViewController.xib; path = Classes/ViewControllers/EditViewController.xib; sourceTree = "<group>"; };
+		3FEC6CAD1D6D0DE300F448AE /* CYRLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRLayoutManager.h; path = Classes/External/CYRTextViewKit/CYRLayoutManager.h; sourceTree = "<group>"; };
+		3FEC6CAE1D6D0DE300F448AE /* CYRLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRLayoutManager.m; path = Classes/External/CYRTextViewKit/CYRLayoutManager.m; sourceTree = "<group>"; };
+		3FEC6CAF1D6D0DE300F448AE /* CYRTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRTextStorage.h; path = Classes/External/CYRTextViewKit/CYRTextStorage.h; sourceTree = "<group>"; };
+		3FEC6CB01D6D0DE300F448AE /* CYRTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRTextStorage.m; path = Classes/External/CYRTextViewKit/CYRTextStorage.m; sourceTree = "<group>"; };
+		3FEC6CB11D6D0DE300F448AE /* CYRTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRTextView.h; path = Classes/External/CYRTextViewKit/CYRTextView.h; sourceTree = "<group>"; };
+		3FEC6CB21D6D0DE300F448AE /* CYRTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRTextView.m; path = Classes/External/CYRTextViewKit/CYRTextView.m; sourceTree = "<group>"; };
+		3FEC6CB31D6D0DE300F448AE /* CYRTextViewKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRTextViewKit.h; path = Classes/External/CYRTextViewKit/CYRTextViewKit.h; sourceTree = "<group>"; };
+		3FEC6CB41D6D0DE300F448AE /* CYRToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYRToken.h; path = Classes/External/CYRTextViewKit/CYRToken.h; sourceTree = "<group>"; };
+		3FEC6CB51D6D0DE300F448AE /* CYRToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYRToken.m; path = Classes/External/CYRTextViewKit/CYRToken.m; sourceTree = "<group>"; };
+		3FEC6CBC1D6D12AD00F448AE /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopViewController.swift; path = Classes/ViewControllers/TopViewController.swift; sourceTree = "<group>"; };
+		3FEC6CBD1D6D12AD00F448AE /* TopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TopViewController.xib; path = Classes/ViewControllers/TopViewController.xib; sourceTree = "<group>"; };
+		3FEC6CC11D6D15B000F448AE /* FileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileInfo.swift; path = Classes/Info/FileInfo.swift; sourceTree = "<group>"; };
+		3FEC6CC31D6DB56B00F448AE /* BaseTableVIewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableVIewController.swift; path = Classes/ViewControllers/Common/BaseTableVIewController.swift; sourceTree = "<group>"; };
+		3FEC6CC51D6DB67C00F448AE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Classes/ViewControllers/Common/BaseViewController.swift; sourceTree = "<group>"; };
+		3FEC6CC71D6E390500F448AE /* CreateFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateFileViewController.swift; path = Classes/ViewControllers/CreateFileViewController.swift; sourceTree = "<group>"; };
+		3FEC6CC81D6E390500F448AE /* CreateFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateFileViewController.xib; path = Classes/ViewControllers/CreateFileViewController.xib; sourceTree = "<group>"; };
+		3FEC6CCD1D6E3D9700F448AE /* Config.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Config.txt; path = Resources/Config/Config.txt; sourceTree = "<group>"; };
+		3FEC6CCF1D6E3DCF00F448AE /* ConfigUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigUtils.swift; path = Classes/Utils/ConfigUtils.swift; sourceTree = "<group>"; };
+		3FEC6CD11D6E3E1600F448AE /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileUtils.swift; path = Classes/Utils/FileUtils.swift; sourceTree = "<group>"; };
+		3FEC6CD31D6E423200F448AE /* CommonConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonConst.swift; path = Classes/CommonConst.swift; sourceTree = "<group>"; };
+		3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Classes/ViewControllers/Common/UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		6400C9BC731D5E4FFCF80D54 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6F30907992A4EDC3B9A2014C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FEC6C891D6D0A8B00F448AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53A7FE98CCEFB40EC00A9E0B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0032CBE6C9D2865A16951FB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6400C9BC731D5E4FFCF80D54 /* Pods.debug.xcconfig */,
+				24FABDDA7E4D8E3D6EE85FBF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3FEC6C831D6D0A8B00F448AE = {
+			isa = PBXGroup;
+			children = (
+				3FEC6C8E1D6D0A8B00F448AE /* PWSimpleEditor */,
+				3FEC6C8D1D6D0A8B00F448AE /* Products */,
+				0032CBE6C9D2865A16951FB7 /* Pods */,
+				F2A0FB2E2B4CD560CA12DCB5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3FEC6C8D1D6D0A8B00F448AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6C8C1D6D0A8B00F448AE /* PWSimpleEditor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FEC6C8E1D6D0A8B00F448AE /* PWSimpleEditor */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CCB1D6E3D7900F448AE /* Resources */,
+				3FEC6CA41D6D0CE300F448AE /* PWSimpleEditor-Bridging-Header.h */,
+				3FEC6CA11D6D0CB900F448AE /* Classes */,
+				3FEC6C961D6D0A8C00F448AE /* Assets.xcassets */,
+				3FEC6C981D6D0A8C00F448AE /* LaunchScreen.storyboard */,
+				3FEC6C9B1D6D0A8C00F448AE /* Info.plist */,
+			);
+			path = PWSimpleEditor;
+			sourceTree = "<group>";
+		};
+		3FEC6CA11D6D0CB900F448AE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CD31D6E423200F448AE /* CommonConst.swift */,
+				3FEC6CA51D6D0CE400F448AE /* AppDelegate.swift */,
+				3FEC6CAB1D6D0DC500F448AE /* External */,
+				3FEC6CA21D6D0CC000F448AE /* Utils */,
+				3FEC6CC01D6D158700F448AE /* Info */,
+				3FEC6CA31D6D0CC400F448AE /* ViewControllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		3FEC6CA21D6D0CC000F448AE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CCF1D6E3DCF00F448AE /* ConfigUtils.swift */,
+				3FEC6CD11D6E3E1600F448AE /* FileUtils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		3FEC6CA31D6D0CC400F448AE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CBB1D6D100000F448AE /* Common */,
+				3FEC6CBC1D6D12AD00F448AE /* TopViewController.swift */,
+				3FEC6CBD1D6D12AD00F448AE /* TopViewController.xib */,
+				3FEC6CC71D6E390500F448AE /* CreateFileViewController.swift */,
+				3FEC6CC81D6E390500F448AE /* CreateFileViewController.xib */,
+				3FEC6CA71D6D0CF500F448AE /* EditViewController.swift */,
+				3FEC6CA91D6D0D0C00F448AE /* EditViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3FEC6CAB1D6D0DC500F448AE /* External */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CAC1D6D0DCC00F448AE /* CYRTextViewKit */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		3FEC6CAC1D6D0DCC00F448AE /* CYRTextViewKit */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CAD1D6D0DE300F448AE /* CYRLayoutManager.h */,
+				3FEC6CAE1D6D0DE300F448AE /* CYRLayoutManager.m */,
+				3FEC6CAF1D6D0DE300F448AE /* CYRTextStorage.h */,
+				3FEC6CB01D6D0DE300F448AE /* CYRTextStorage.m */,
+				3FEC6CB11D6D0DE300F448AE /* CYRTextView.h */,
+				3FEC6CB21D6D0DE300F448AE /* CYRTextView.m */,
+				3FEC6CB31D6D0DE300F448AE /* CYRTextViewKit.h */,
+				3FEC6CB41D6D0DE300F448AE /* CYRToken.h */,
+				3FEC6CB51D6D0DE300F448AE /* CYRToken.m */,
+			);
+			name = CYRTextViewKit;
+			sourceTree = "<group>";
+		};
+		3FEC6CBB1D6D100000F448AE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */,
+				3FEC6CC51D6DB67C00F448AE /* BaseViewController.swift */,
+				3FEC6CC31D6DB56B00F448AE /* BaseTableVIewController.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3FEC6CC01D6D158700F448AE /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CC11D6D15B000F448AE /* FileInfo.swift */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		3FEC6CCB1D6E3D7900F448AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CCC1D6E3D8400F448AE /* Config */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3FEC6CCC1D6E3D8400F448AE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CCD1D6E3D9700F448AE /* Config.txt */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		F2A0FB2E2B4CD560CA12DCB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F30907992A4EDC3B9A2014C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FEC6C8B1D6D0A8B00F448AE /* PWSimpleEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FEC6C9E1D6D0A8C00F448AE /* Build configuration list for PBXNativeTarget "PWSimpleEditor" */;
+			buildPhases = (
+				021008C90AA5390F6015F31B /* Check Pods Manifest.lock */,
+				3FEC6C881D6D0A8B00F448AE /* Sources */,
+				3FEC6C891D6D0A8B00F448AE /* Frameworks */,
+				3FEC6C8A1D6D0A8B00F448AE /* Resources */,
+				6F7B78B8B515F9E95E7AC317 /* Embed Pods Frameworks */,
+				538985136082447B9F7C1C76 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PWSimpleEditor;
+			productName = PWSimpleEditor;
+			productReference = 3FEC6C8C1D6D0A8B00F448AE /* PWSimpleEditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FEC6C841D6D0A8B00F448AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Paveway;
+				TargetAttributes = {
+					3FEC6C8B1D6D0A8B00F448AE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 3FEC6C871D6D0A8B00F448AE /* Build configuration list for PBXProject "PWSimpleEditor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FEC6C831D6D0A8B00F448AE;
+			productRefGroup = 3FEC6C8D1D6D0A8B00F448AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FEC6C8B1D6D0A8B00F448AE /* PWSimpleEditor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FEC6C8A1D6D0A8B00F448AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEC6CAA1D6D0D0C00F448AE /* EditViewController.xib in Resources */,
+				3FEC6C9A1D6D0A8C00F448AE /* LaunchScreen.storyboard in Resources */,
+				3FEC6CCE1D6E3D9700F448AE /* Config.txt in Resources */,
+				3FEC6C971D6D0A8C00F448AE /* Assets.xcassets in Resources */,
+				3FEC6CCA1D6E390500F448AE /* CreateFileViewController.xib in Resources */,
+				3FEC6CBF1D6D12AD00F448AE /* TopViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		021008C90AA5390F6015F31B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		538985136082447B9F7C1C76 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F7B78B8B515F9E95E7AC317 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FEC6C881D6D0A8B00F448AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEC6CB91D6D0DE300F448AE /* CYRToken.m in Sources */,
+				3FEC6CC61D6DB67C00F448AE /* BaseViewController.swift in Sources */,
+				3FEC6CD61D6E4A7000F448AE /* UIViewControllerExtension.swift in Sources */,
+				3FEC6CC91D6E390500F448AE /* CreateFileViewController.swift in Sources */,
+				3FEC6CD01D6E3DCF00F448AE /* ConfigUtils.swift in Sources */,
+				3FEC6CB61D6D0DE300F448AE /* CYRLayoutManager.m in Sources */,
+				3FEC6CB81D6D0DE300F448AE /* CYRTextView.m in Sources */,
+				3FEC6CA81D6D0CF500F448AE /* EditViewController.swift in Sources */,
+				3FEC6CA61D6D0CE400F448AE /* AppDelegate.swift in Sources */,
+				3FEC6CC41D6DB56B00F448AE /* BaseTableVIewController.swift in Sources */,
+				3FEC6CD21D6E3E1600F448AE /* FileUtils.swift in Sources */,
+				3FEC6CC21D6D15B000F448AE /* FileInfo.swift in Sources */,
+				3FEC6CB71D6D0DE300F448AE /* CYRTextStorage.m in Sources */,
+				3FEC6CD41D6E423200F448AE /* CommonConst.swift in Sources */,
+				3FEC6CBE1D6D12AD00F448AE /* TopViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3FEC6C981D6D0A8C00F448AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FEC6C991D6D0A8C00F448AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FEC6C9C1D6D0A8C00F448AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FEC6C9D1D6D0A8C00F448AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FEC6C9F1D6D0A8C00F448AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6400C9BC731D5E4FFCF80D54 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = PWSimpleEditor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.paveway.PWSimpleEditor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PWSimpleEditor/PWSimpleEditor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3FEC6CA01D6D0A8C00F448AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24FABDDA7E4D8E3D6EE85FBF /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = PWSimpleEditor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.paveway.PWSimpleEditor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PWSimpleEditor/PWSimpleEditor-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FEC6C871D6D0A8B00F448AE /* Build configuration list for PBXProject "PWSimpleEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEC6C9C1D6D0A8C00F448AE /* Debug */,
+				3FEC6C9D1D6D0A8C00F448AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FEC6C9E1D6D0A8C00F448AE /* Build configuration list for PBXNativeTarget "PWSimpleEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEC6C9F1D6D0A8C00F448AE /* Debug */,
+				3FEC6CA01D6D0A8C00F448AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FEC6C841D6D0A8B00F448AE /* Project object */;
+}
