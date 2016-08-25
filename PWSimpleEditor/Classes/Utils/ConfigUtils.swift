@@ -21,18 +21,25 @@ class ConfigUtils: NSObject {
      取得できない場合、空文字列を返却する。
  
      - Parameter key: キー名
-     - Returns: 設定値
+     - Returns: 処理結果, 設定値
      */
-    class func getConfigValue(key: String) -> String! {
-        let fileData = FileUtils.getFileData("Config", type: "txt")
-        let fileDatas = fileData.componentsSeparatedByString("\n")
-        for line in fileDatas {
-            let lines = line.componentsSeparatedByString("=")
-            if key == lines[0] {
-                return lines[1]
+    class func getConfigValue(key: String) -> (result: Bool, value: String) {
+        if key.isEmpty {
+            return (false, "")
+        }
+
+        let results = FileUtils.readResourceFile(Config.kFilename, type: Config.kType)
+        if !results.result {
+            return (false, "")
+        }
+        let lines = results.fileData.componentsSeparatedByString("\n")
+        for line in lines {
+            let items = line.componentsSeparatedByString("=")
+            if key == items[0] {
+                return (true, items[1])
             }
         }
-        return ""
+        return (false, "")
     }
 
     /**
@@ -40,15 +47,24 @@ class ConfigUtils: NSObject {
      取得できない場合、空の配列を返却する。
  
      - Parameter key: キー名
-     - Returns: 設定値の配列
+     - Returns: 処理結果, 設定値の配列
      */
-    class func getConfigValues(key: String) -> [String]! {
-        let value = getConfigValue(key)
+    class func getConfigValues(key: String) -> (result: Bool, values: [String]) {
+        if key.isEmpty {
+            return (false, [] as [String])
+        }
+
+        let results = getConfigValue(key)
+        if !results.result {
+            return (false, [] as [String])
+        }
+
+        let value = results.value
         if value.isEmpty {
-            return [] as [String]
+            return (false, [] as [String])
 
         } else {
-            return value.componentsSeparatedByString(",")
+            return (true, value.componentsSeparatedByString(","))
         }
     }
 }

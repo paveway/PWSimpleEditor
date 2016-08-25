@@ -20,4 +20,7 @@ class FileInfo: NSObject {
 
     /// パス名
     var pathName = ""
+
+    /// ディレクトリか否か
+    var isDir = false
 }

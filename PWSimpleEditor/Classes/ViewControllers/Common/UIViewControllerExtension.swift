@@ -6,7 +6,8 @@
 //  Copyright © 2016年 Paveway. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import GoogleMobileAds
 
 /**
  UIViewController拡張
@@ -36,6 +37,27 @@ extension UIViewController {
      - Parameter buttonItem: 右バーボタン
      */
     func rightBarButtonPressed(buttonItem: UIBarButtonItem) {
-        // 何もしない。
+        // サブクラスで実装しない場合、エラーとする。
+        abort()
+    }
+
+    /**
+     バナービューを設定する。
+
+     - Parameter bannerView: バナービュー
+     */
+    func setupBannerView(bannerView: GADBannerView, delegate: GADBannerViewDelegate) {
+        let adUnitId = ConfigUtils.getConfigValue(Config.Key.kAdmobAdUnitId)
+        bannerView.adUnitID = adUnitId.value
+
+        var deviceIds = ConfigUtils.getConfigValues(Config.Key.kAdmobAdTestDeviceIds)
+        deviceIds.values.append(kGADSimulatorID as! String)
+
+        bannerView.delegate = delegate
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = deviceIds.values
+
+        bannerView.loadRequest(request)
     }
 }

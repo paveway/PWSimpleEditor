@@ -28,7 +28,8 @@
 		3FEC6CD21D6E3E1600F448AE /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD11D6E3E1600F448AE /* FileUtils.swift */; };
 		3FEC6CD41D6E423200F448AE /* CommonConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD31D6E423200F448AE /* CommonConst.swift */; };
 		3FEC6CD61D6E4A7000F448AE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */; };
-		53A7FE98CCEFB40EC00A9E0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F30907992A4EDC3B9A2014C /* libPods.a */; };
+		3FEC6CD81D6E5B6E00F448AE /* BaseXLFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD71D6E5B6E00F448AE /* BaseXLFormViewController.swift */; };
+		CB026B103B1391E114D8EA1E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC88C70C9D011CAE606706D8 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +63,9 @@
 		3FEC6CD11D6E3E1600F448AE /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileUtils.swift; path = Classes/Utils/FileUtils.swift; sourceTree = "<group>"; };
 		3FEC6CD31D6E423200F448AE /* CommonConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonConst.swift; path = Classes/CommonConst.swift; sourceTree = "<group>"; };
 		3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Classes/ViewControllers/Common/UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		3FEC6CD71D6E5B6E00F448AE /* BaseXLFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseXLFormViewController.swift; path = Classes/ViewControllers/Common/BaseXLFormViewController.swift; sourceTree = "<group>"; };
 		6400C9BC731D5E4FFCF80D54 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6F30907992A4EDC3B9A2014C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC88C70C9D011CAE606706D8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A7FE98CCEFB40EC00A9E0B /* libPods.a in Frameworks */,
+				CB026B103B1391E114D8EA1E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,9 +110,9 @@
 		3FEC6C8E1D6D0A8B00F448AE /* PWSimpleEditor */ = {
 			isa = PBXGroup;
 			children = (
-				3FEC6CCB1D6E3D7900F448AE /* Resources */,
 				3FEC6CA41D6D0CE300F448AE /* PWSimpleEditor-Bridging-Header.h */,
 				3FEC6CA11D6D0CB900F448AE /* Classes */,
+				3FEC6CCB1D6E3D7900F448AE /* Resources */,
 				3FEC6C961D6D0A8C00F448AE /* Assets.xcassets */,
 				3FEC6C981D6D0A8C00F448AE /* LaunchScreen.storyboard */,
 				3FEC6C9B1D6D0A8C00F448AE /* Info.plist */,
@@ -184,6 +186,7 @@
 				3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */,
 				3FEC6CC51D6DB67C00F448AE /* BaseViewController.swift */,
 				3FEC6CC31D6DB56B00F448AE /* BaseTableVIewController.swift */,
+				3FEC6CD71D6E5B6E00F448AE /* BaseXLFormViewController.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -215,7 +218,7 @@
 		F2A0FB2E2B4CD560CA12DCB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6F30907992A4EDC3B9A2014C /* libPods.a */,
+				FC88C70C9D011CAE606706D8 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				3FEC6CD61D6E4A7000F448AE /* UIViewControllerExtension.swift in Sources */,
 				3FEC6CC91D6E390500F448AE /* CreateFileViewController.swift in Sources */,
 				3FEC6CD01D6E3DCF00F448AE /* ConfigUtils.swift in Sources */,
+				3FEC6CD81D6E5B6E00F448AE /* BaseXLFormViewController.swift in Sources */,
 				3FEC6CB61D6D0DE300F448AE /* CYRLayoutManager.m in Sources */,
 				3FEC6CB81D6D0DE300F448AE /* CYRTextView.m in Sources */,
 				3FEC6CA81D6D0CF500F448AE /* EditViewController.swift in Sources */,
@@ -468,6 +472,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Private\"",
+					"\"${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK\"",
+				);
 				INFOPLIST_FILE = PWSimpleEditor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.paveway.PWSimpleEditor;
@@ -483,6 +493,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Private\"",
+					"\"${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK\"",
+				);
 				INFOPLIST_FILE = PWSimpleEditor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.paveway.PWSimpleEditor;

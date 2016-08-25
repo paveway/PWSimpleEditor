@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+        let documentPath = FileUtils.getDocumentPath()
+        let rootPath = "\(documentPath)/\(File.kRootDir)"
+        FileUtils.createDir(rootPath)
+
         let vc = createViewController()
         createWindow(vc)
         return true

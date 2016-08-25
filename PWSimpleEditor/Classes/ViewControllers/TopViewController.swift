@@ -42,13 +42,7 @@ class TopViewController: BaseTableViewController {
         createRightBarButton(.Add)
 
         // バナービューを設定する。
-        setupBannerView()
-
-        for i in 0 ..< 20 {
-            let fileInfo = FileInfo()
-            fileInfo.name = "filename\(String(i))"
-            fileInfoList.append(fileInfo)
-        }
+        setupBannerView(bannerView, delegate: self)
     }
 
     /**
@@ -57,6 +51,23 @@ class TopViewController: BaseTableViewController {
     override func didReceiveMemoryWarning() {
         // スーパークラスのメソッドを呼び出す。
         super.didReceiveMemoryWarning()
+    }
+
+    /**
+     画面が表示される前に呼び出される。
+ 
+     - Parameter animated: アニメーション指定
+     */
+    override func viewWillAppear(animated: Bool) {
+        // スーパークラスのメソッドを呼び出す。
+        super.viewWillAppear(animated)
+
+        // ルートディレクトリのファイル情報リストを取得する。
+        let rootPath = FileUtils.getLocalPath(File.kRootDir)
+        fileInfoList = FileUtils.getFileInfoListInDir(rootPath)
+
+        // テーブルビューを更新する。
+        tableView.reloadData()
     }
 
     // MARK: - Bar Button
@@ -82,6 +93,7 @@ class TopViewController: BaseTableViewController {
      - Returns: セル数
      */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // ファイル情報数を返却する。
         let count = fileInfoList.count
         return count
     }
@@ -94,14 +106,18 @@ class TopViewController: BaseTableViewController {
      - Returns: セル
      */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // セルを取得する。
         let cell = getTableViewCell(tableView)
 
+        // セル番号がファイル情報数より大きい場合
+        // 処理を中断して終了する。
         let row = indexPath.row
         let count = fileInfoList.count
         if count < row + 1 {
             return cell
         }
 
+        // セルを設定する。
         let fileInfo = fileInfoList[row]
         cell.textLabel?.text = fileInfo.name
         cell.accessoryType = .DetailDisclosureButton
