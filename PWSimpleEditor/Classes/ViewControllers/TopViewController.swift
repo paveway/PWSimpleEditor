@@ -15,7 +15,7 @@ import SWTableViewCell
  - Version: 1.0 新規作成
  - Authoer: paveway.info@gmail.com
  */
-class TopViewController: BaseTableViewController, SWTableViewCellDelegate {
+class TopViewController: BaseTableViewController {
 
     // MARK: - Constants
 
@@ -108,42 +108,22 @@ class TopViewController: BaseTableViewController, SWTableViewCellDelegate {
      */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // セルを取得する。
-        //let cell = getTableViewCell(tableView)
-
-        //SWTableViewCell *cell = (SWTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-
-/*
-        if (cell == nil) {
-            cell = [[SWTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-            cell.leftUtilityButtons = [self leftButtons];
-            cell.rightUtilityButtons = [self rightButtons];
-            cell.delegate = self;
-        }
- */
-
-        var cell = tableView.dequeueReusableCellWithIdentifier(kCellName) as? SWTableViewCell
-        if cell == nil {
-            cell = SWTableViewCell(style: .Default, reuseIdentifier: kCellName)
-            cell!.rightUtilityButtons = self.createRightButtons() as [AnyObject]
-            //cell!.leftUtilityButtons = self.leftUtilityButtons() as [AnyObject]
-            cell!.delegate = self
-        }
-
+        let cell = getTableViewCell()
 
         // セル番号がファイル情報数より大きい場合
         // 処理を中断して終了する。
         let row = indexPath.row
         let count = fileInfoList.count
         if count < row + 1 {
-            return cell!
+            return cell
         }
 
         // セルを設定する。
         let fileInfo = fileInfoList[row]
-        cell!.textLabel?.text = fileInfo.name
-        cell!.accessoryType = .DisclosureIndicator
+        cell.textLabel?.text = fileInfo.name
+        cell.accessoryType = .DisclosureIndicator
 
-        return cell!
+        return cell
     }
 
     /**
@@ -151,7 +131,7 @@ class TopViewController: BaseTableViewController, SWTableViewCellDelegate {
  
      - Returns: セルの右ボタンの配列
      */
-    func createRightButtons() -> NSMutableArray {
+    override func createRightUtilityButtons() -> NSMutableArray {
         let buttons = NSMutableArray()
         buttons.sw_addUtilityButtonWithColor(UIColor.init(colorLiteralRed: 0.78, green: 0.78, blue: 0.8, alpha: 1.0), title: "名前変更")
         buttons.sw_addUtilityButtonWithColor(UIColor.init(colorLiteralRed: 1.0, green: 0.231, blue: 0.188, alpha: 1.0), title: "削除")
@@ -172,6 +152,12 @@ class TopViewController: BaseTableViewController, SWTableViewCellDelegate {
         switch index {
         case 0:
             // 名前変更ボタンの場合
+            let indexPath = self.tableView.indexPathForCell(cell)
+            let row = indexPath!.row
+            let fileInfo = self.fileInfoList[row]
+            let oldFileName = fileInfo.name
+            let vc = RenameFileViewController(oldFileName: oldFileName)
+            navigationController?.pushViewController(vc, animated: true)
             break
 
         case 1:

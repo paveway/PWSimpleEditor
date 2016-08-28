@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SWTableViewCell
 
 /**
  基底テーブルクラス
@@ -14,7 +15,7 @@ import Foundation
  - Version: 1.0 新規作成
  - Authoer: paveway.info@gmail.com
  */
-class BaseTableViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class BaseTableViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate {
 
     // MARK: - Constants
 
@@ -60,7 +61,7 @@ class BaseTableViewController: BaseViewController, UITableViewDataSource, UITabl
      - Returns: セル
      */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = getTableViewCell(tableView)
+        let cell = getTableViewCell()
         return cell
     }
 
@@ -89,18 +90,40 @@ class BaseTableViewController: BaseViewController, UITableViewDataSource, UITabl
      - Parameter tableView: テーブルビュー
      - Returns: テーブルビューセル
      */
-    func getTableViewCell(tableView: UITableView) -> UITableViewCell {
-        // セルを取得する。
-        var cell = tableView.dequeueReusableCellWithIdentifier(kCellName) as UITableViewCell?
-        if (cell == nil) {
-            // セルが取得できない場合
-            // セルを生成する。
-            cell = UITableViewCell()
+    func getTableViewCell(style: UITableViewCellStyle = .Default) -> SWTableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier(kCellName) as? SWTableViewCell
+        if cell == nil {
+            cell = SWTableViewCell(style: style, reuseIdentifier: kCellName)
+            let leftUtilityButtons = createLeftUtilityButtons()
+            if leftUtilityButtons != nil {
+                cell!.leftUtilityButtons = leftUtilityButtons! as [AnyObject]
+            }
+            let rightUtilityButtons = createRightUtilityButtons()
+            if rightUtilityButtons != nil {
+                cell!.rightUtilityButtons = rightUtilityButtons! as [AnyObject]
+            }
+            cell!.delegate = self
         }
-
-        cell!.textLabel?.text = ""
-        cell!.accessoryType = .None
-        
         return cell!
+    }
+
+    /**
+     左セルボタン配列を生成する。
+     サブクラスで実装する。
+ 
+     - Returns: 左セルボタン配列
+     */
+    func createLeftUtilityButtons() -> NSMutableArray? {
+        return nil
+    }
+
+    /**
+     右セルボタン配列を生成する。
+     サブクラスで実装する。
+
+     - Returns: 右セルボタン配列
+     */
+    func createRightUtilityButtons() -> NSMutableArray? {
+        return nil
     }
 }

@@ -299,8 +299,8 @@ class FileUtils: NSObject {
             return false
         }
 
-        let oldPath = getLocalPath(pathName, name: oldName)
-        let newPath = getLocalPath(pathName, name: newName)
+        let oldPath = "\(pathName)/\(oldName)"
+        let newPath = "\(pathName)/\(newName)"
 
         let fileManager = NSFileManager.defaultManager()
         do {

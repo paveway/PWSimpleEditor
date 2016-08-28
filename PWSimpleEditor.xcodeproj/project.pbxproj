@@ -30,6 +30,8 @@
 		3FEC6CD61D6E4A7000F448AE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */; };
 		3FEC6CD81D6E5B6E00F448AE /* BaseXLFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD71D6E5B6E00F448AE /* BaseXLFormViewController.swift */; };
 		3FEC6CDB1D6FA49100F448AE /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CDA1D6FA49100F448AE /* SweetAlert.swift */; };
+		3FEC6CDE1D7395D300F448AE /* RenameFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CDC1D7395D300F448AE /* RenameFileViewController.swift */; };
+		3FEC6CDF1D7395D300F448AE /* RenameFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC6CDD1D7395D300F448AE /* RenameFileViewController.xib */; };
 		CB026B103B1391E114D8EA1E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC88C70C9D011CAE606706D8 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Classes/ViewControllers/Common/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		3FEC6CD71D6E5B6E00F448AE /* BaseXLFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseXLFormViewController.swift; path = Classes/ViewControllers/Common/BaseXLFormViewController.swift; sourceTree = "<group>"; };
 		3FEC6CDA1D6FA49100F448AE /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SweetAlert.swift; path = "Classes/External/SweetAlert-iOS/SweetAlert.swift"; sourceTree = "<group>"; };
+		3FEC6CDC1D7395D300F448AE /* RenameFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenameFileViewController.swift; path = Classes/ViewControllers/RenameFileViewController.swift; sourceTree = "<group>"; };
+		3FEC6CDD1D7395D300F448AE /* RenameFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RenameFileViewController.xib; path = Classes/ViewControllers/RenameFileViewController.xib; sourceTree = "<group>"; };
 		6400C9BC731D5E4FFCF80D54 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FC88C70C9D011CAE606706D8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -154,6 +158,8 @@
 				3FEC6CC81D6E390500F448AE /* CreateFileViewController.xib */,
 				3FEC6CA71D6D0CF500F448AE /* EditViewController.swift */,
 				3FEC6CA91D6D0D0C00F448AE /* EditViewController.xib */,
+				3FEC6CDC1D7395D300F448AE /* RenameFileViewController.swift */,
+				3FEC6CDD1D7395D300F448AE /* RenameFileViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 				3FEC6CAA1D6D0D0C00F448AE /* EditViewController.xib in Resources */,
 				3FEC6C9A1D6D0A8C00F448AE /* LaunchScreen.storyboard in Resources */,
 				3FEC6CCE1D6E3D9700F448AE /* Config.txt in Resources */,
+				3FEC6CDF1D7395D300F448AE /* RenameFileViewController.xib in Resources */,
 				3FEC6C971D6D0A8C00F448AE /* Assets.xcassets in Resources */,
 				3FEC6CCA1D6E390500F448AE /* CreateFileViewController.xib in Resources */,
 				3FEC6CBF1D6D12AD00F448AE /* TopViewController.xib in Resources */,
@@ -373,6 +380,7 @@
 				3FEC6CC41D6DB56B00F448AE /* BaseTableVIewController.swift in Sources */,
 				3FEC6CD21D6E3E1600F448AE /* FileUtils.swift in Sources */,
 				3FEC6CC21D6D15B000F448AE /* FileInfo.swift in Sources */,
+				3FEC6CDE1D7395D300F448AE /* RenameFileViewController.swift in Sources */,
 				3FEC6CB71D6D0DE300F448AE /* CYRTextStorage.m in Sources */,
 				3FEC6CD41D6E423200F448AE /* CommonConst.swift in Sources */,
 				3FEC6CBE1D6D12AD00F448AE /* TopViewController.swift in Sources */,
