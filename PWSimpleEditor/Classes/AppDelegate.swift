@@ -15,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        let documentPath = FileUtils.getDocumentPath()
-        let rootPath = "\(documentPath)/\(File.kRootDir)"
+        let documentsPath = FileUtils.getDocumentsPath()
+        let rootPath = "\(documentsPath)/\(File.kRootDir)"
         FileUtils.createDir(rootPath)
 
         let vc = createViewController()

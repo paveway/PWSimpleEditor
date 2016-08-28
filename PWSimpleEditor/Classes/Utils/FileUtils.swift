@@ -21,9 +21,9 @@ class FileUtils: NSObject {
 
      - Returns: ドキュメントパス
      */
-    class func getDocumentPath() -> String {
-        let documentPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        return documentPath
+    class func getDocumentsPath() -> String {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        return documentsPath
     }
 
     /**
@@ -33,8 +33,8 @@ class FileUtils: NSObject {
      - Returns: ローカルパス
      */
     class func getLocalPath(pathName: String) -> String {
-        let documentPath = getDocumentPath()
-        let localPath = "\(documentPath)/\(pathName)"
+        let documentsPath = getDocumentsPath()
+        let localPath = "\(documentsPath)/\(pathName)"
         return localPath
     }
 
@@ -46,13 +46,13 @@ class FileUtils: NSObject {
      - Returns: ローカルパス
      */
     class func getLocalPath(pathName: String, name: String) -> String {
-        let documentPath = getDocumentPath()
+        let documentsPath = getDocumentsPath()
         let localPath: String
         if pathName.isEmpty {
-            localPath = "\(documentPath)/\(name)"
+            localPath = "\(documentsPath)/\(name)"
 
         } else {
-            localPath = "\(documentPath)/\(pathName)/\(name)"
+            localPath = "\(documentsPath)/\(pathName)/\(name)"
         }
         return localPath
     }
@@ -60,15 +60,16 @@ class FileUtils: NSObject {
     /**
      ディレクトリ/ファイルが存在するかチェックする。
 
-     - Parameter pathName: パス名
+     - Parameter localPathName: Documentsディレクトリを含むパス名
      - Parameter name: ディレクトリ名、またはファイル名
      - Returns: チェック結果 true:存在する。 / false:存在しない。
      */
-    class func isExist(pathName: String, name: String) -> Bool {
-        let localPath = getLocalPath(pathName, name: name)
+    class func isExist(localPathName: String, name: String) -> Bool {
+        let localPath = "\(localPathName)/\(name)"
         let fileManager = NSFileManager.defaultManager()
         var isDir: ObjCBool = false
         let isFile = fileManager.fileExistsAtPath(localPath, isDirectory: &isDir)
+        print(isFile)
         if isDir {
             return true
         }
@@ -78,13 +79,13 @@ class FileUtils: NSObject {
     /**
      ディレクトリ/ファイルが存在するかチェックする。
 
-     - Parameter pathName: ディレクトリパス名、またはファイルパス名
+     - Parameter localPathName: ディレクトリパス名、またはファイルパス名
      - Returns: チェック結果 true:存在する。 / false:存在しない。
      */
-    class func isExist(pathName: String) -> Bool {
+    class func isExist(localPathName: String) -> Bool {
         let fileManager = NSFileManager.defaultManager()
         var isDir: ObjCBool = false
-        let isFile = fileManager.fileExistsAtPath(pathName, isDirectory: &isDir)
+        let isFile = fileManager.fileExistsAtPath(localPathName, isDirectory: &isDir)
         if isDir {
             return true
         }
@@ -254,6 +255,34 @@ class FileUtils: NSObject {
         } catch {
             return false
         }
+        return true
+    }
+
+    /**
+     ディレクトリ/ファイルを削除する。
+     nameにディレクトリ名を指定した場合、サブディレクトリを含め削除する。
+
+     - Parameter pathName: ディレクトリパス名、またはファイルパス名
+     - Returns: 処理結果 true:削除成功、または引数nameが存在しない。 / false:削除失敗
+     */
+    class func remove(pathName: String, check: Bool = true) -> Bool {
+        if pathName.isEmpty {
+            return false
+        }
+
+        if check {
+            if !isExist(pathName) {
+                return true
+            }
+        }
+
+        let fileManager = NSFileManager.defaultManager()
+        do {
+            try fileManager.removeItemAtPath(pathName)
+        } catch {
+            return false
+        }
+
         return true
     }
 

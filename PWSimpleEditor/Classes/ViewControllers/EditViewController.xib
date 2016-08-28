@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController">
             <connections>
-                <outlet property="bannerView" destination="Sm3-8E-zUS" id="Gom-qJ-KmO"/>
-                <outlet property="editView" destination="eGa-xX-vu0" id="aKp-jQ-ReO"/>
+                <outlet property="bannerView" destination="wnE-Hf-arj" id="0bX-H3-anr"/>
+                <outlet property="editView" destination="brA-2k-jwJ" id="Xhu-Wc-EXK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Ew3-Bt-VRa"/>
             </connections>
         </placeholder>
@@ -17,29 +17,29 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGa-xX-vu0">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brA-2k-jwJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnE-Hf-arj" customClass="GADBannerView">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="fKh-Gu-Tct"/>
+                        <constraint firstAttribute="height" constant="50" id="wvh-t2-am8"/>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sm3-8E-zUS" customClass="GADBannerView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Sm3-8E-zUS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Ix-Ij-b3N"/>
-                <constraint firstAttribute="bottom" secondItem="eGa-xX-vu0" secondAttribute="bottom" id="2rx-FN-ufP"/>
-                <constraint firstItem="eGa-xX-vu0" firstAttribute="top" secondItem="Sm3-8E-zUS" secondAttribute="bottom" id="BfS-Xg-VAe"/>
-                <constraint firstAttribute="trailing" secondItem="Sm3-8E-zUS" secondAttribute="trailing" id="Gzx-YI-R6b"/>
-                <constraint firstItem="eGa-xX-vu0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TGY-d3-y6n"/>
-                <constraint firstItem="eGa-xX-vu0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fVF-Yz-Wfe"/>
-                <constraint firstItem="Sm3-8E-zUS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jh3-o5-vew"/>
-                <constraint firstItem="Sm3-8E-zUS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pYC-O3-G0g"/>
-                <constraint firstAttribute="trailing" secondItem="eGa-xX-vu0" secondAttribute="trailing" id="vWu-6A-vxy"/>
+                <constraint firstItem="brA-2k-jwJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Wi-Jr-YJr"/>
+                <constraint firstItem="brA-2k-jwJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1fA-fO-Arw"/>
+                <constraint firstAttribute="bottom" secondItem="wnE-Hf-arj" secondAttribute="bottom" id="7tc-Id-iih"/>
+                <constraint firstAttribute="trailing" secondItem="wnE-Hf-arj" secondAttribute="trailing" id="Bfm-Rg-Xbx"/>
+                <constraint firstItem="brA-2k-jwJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cuM-j9-GOs"/>
+                <constraint firstItem="wnE-Hf-arj" firstAttribute="top" secondItem="brA-2k-jwJ" secondAttribute="bottom" id="sCw-5b-0WB"/>
+                <constraint firstAttribute="trailing" secondItem="brA-2k-jwJ" secondAttribute="trailing" id="vDC-8K-e9e"/>
+                <constraint firstItem="wnE-Hf-arj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x8d-ol-EYf"/>
+                <constraint firstItem="wnE-Hf-arj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ynM-dN-maW"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

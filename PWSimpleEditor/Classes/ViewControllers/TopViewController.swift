@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWTableViewCell
 
 /**
  トップ画面
@@ -14,7 +15,7 @@ import UIKit
  - Version: 1.0 新規作成
  - Authoer: paveway.info@gmail.com
  */
-class TopViewController: BaseTableViewController {
+class TopViewController: BaseTableViewController, SWTableViewCellDelegate {
 
     // MARK: - Constants
 
@@ -107,34 +108,125 @@ class TopViewController: BaseTableViewController {
      */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // セルを取得する。
-        let cell = getTableViewCell(tableView)
+        //let cell = getTableViewCell(tableView)
+
+        //SWTableViewCell *cell = (SWTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+
+/*
+        if (cell == nil) {
+            cell = [[SWTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+            cell.leftUtilityButtons = [self leftButtons];
+            cell.rightUtilityButtons = [self rightButtons];
+            cell.delegate = self;
+        }
+ */
+
+        var cell = tableView.dequeueReusableCellWithIdentifier(kCellName) as? SWTableViewCell
+        if cell == nil {
+            cell = SWTableViewCell(style: .Default, reuseIdentifier: kCellName)
+            cell!.rightUtilityButtons = self.createRightButtons() as [AnyObject]
+            //cell!.leftUtilityButtons = self.leftUtilityButtons() as [AnyObject]
+            cell!.delegate = self
+        }
+
 
         // セル番号がファイル情報数より大きい場合
         // 処理を中断して終了する。
         let row = indexPath.row
         let count = fileInfoList.count
         if count < row + 1 {
-            return cell
+            return cell!
         }
 
         // セルを設定する。
         let fileInfo = fileInfoList[row]
-        cell.textLabel?.text = fileInfo.name
-        cell.accessoryType = .DetailDisclosureButton
+        cell!.textLabel?.text = fileInfo.name
+        cell!.accessoryType = .DisclosureIndicator
 
-        return cell
+        return cell!
+    }
+
+    /**
+     セルの右ボタンを作成する。
+ 
+     - Returns: セルの右ボタンの配列
+     */
+    func createRightButtons() -> NSMutableArray {
+        let buttons = NSMutableArray()
+        buttons.sw_addUtilityButtonWithColor(UIColor.init(colorLiteralRed: 0.78, green: 0.78, blue: 0.8, alpha: 1.0), title: "名前変更")
+        buttons.sw_addUtilityButtonWithColor(UIColor.init(colorLiteralRed: 1.0, green: 0.231, blue: 0.188, alpha: 1.0), title: "削除")
+        return buttons
+    }
+
+    /**
+     セルの右ボタンが押下された時に呼び出される。
+ 
+     - Parameter cell: セル
+     - Parameter index: ボタンの位置
+ 　  */
+    func swipeableTableViewCell(cell: SWTableViewCell, didTriggerRightUtilityButtonWithIndex index: NSInteger) {
+        // ボタンを隠す。
+        cell.hideUtilityButtonsAnimated(true)
+
+        // ボタンの位置により処理を振り分ける。
+        switch index {
+        case 0:
+            // 名前変更ボタンの場合
+            break
+
+        case 1:
+            // 削除ボタンの場合
+            // 削除確認アラートを表示する。
+            let name = cell.textLabel?.text
+            self.showDeleteConfirmAlert(name!) {
+                // 削除する場合
+                let indexPath = self.tableView.indexPathForCell(cell)
+                let row = indexPath!.row
+                let fileInfo = self.fileInfoList[row]
+                let fileName = fileInfo.name
+                let pathName = FileUtils.getLocalPath(File.kRootDir)
+                let filePathName = "\(pathName)/\(fileName)"
+                print(filePathName)
+                let result = FileUtils.remove(filePathName)
+                if !result {
+                    return
+                }
+                self.fileInfoList.removeAtIndex(row)
+                self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
+            }
+            break
+
+        default:
+            break
+        }
     }
 
     // MARK: - UITableViewDelegate
 
     /**
      セルが選択された時に呼び出される。
- 
+
      - Parameter tableView: テーブルビュー
      - Parameter indexPath: インデックスパス
      */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 選択状態を解除する。
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+        // セル番号がファイル情報数より大きい場合
+        // 処理を中断して終了する。
+        let row = indexPath.row
+        let count = fileInfoList.count
+        if count < row + 1 {
+            return
+        }
+
+        // セル位置のファイル情報を取得する。
+        let fileInfo = fileInfoList[row]
+
+        // 編集画面に遷移する。
+        let vc = EditViewController()
+        vc.fileName = fileInfo.name
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

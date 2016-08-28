@@ -4,3 +4,4 @@
 
 #import "CYRTextViewKit.h"
 #import <XLForm/XLForm.h>
+#import <SWTableViewCell/SWTableViewCell.h>

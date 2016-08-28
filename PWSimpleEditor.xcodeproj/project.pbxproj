@@ -29,6 +29,7 @@
 		3FEC6CD41D6E423200F448AE /* CommonConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD31D6E423200F448AE /* CommonConst.swift */; };
 		3FEC6CD61D6E4A7000F448AE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */; };
 		3FEC6CD81D6E5B6E00F448AE /* BaseXLFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CD71D6E5B6E00F448AE /* BaseXLFormViewController.swift */; };
+		3FEC6CDB1D6FA49100F448AE /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC6CDA1D6FA49100F448AE /* SweetAlert.swift */; };
 		CB026B103B1391E114D8EA1E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC88C70C9D011CAE606706D8 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		3FEC6CD31D6E423200F448AE /* CommonConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonConst.swift; path = Classes/CommonConst.swift; sourceTree = "<group>"; };
 		3FEC6CD51D6E4A7000F448AE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Classes/ViewControllers/Common/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		3FEC6CD71D6E5B6E00F448AE /* BaseXLFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseXLFormViewController.swift; path = Classes/ViewControllers/Common/BaseXLFormViewController.swift; sourceTree = "<group>"; };
+		3FEC6CDA1D6FA49100F448AE /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SweetAlert.swift; path = "Classes/External/SweetAlert-iOS/SweetAlert.swift"; sourceTree = "<group>"; };
 		6400C9BC731D5E4FFCF80D54 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FC88C70C9D011CAE606706D8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				3FEC6CAC1D6D0DCC00F448AE /* CYRTextViewKit */,
+				3FEC6CD91D6FA42100F448AE /* SweetAlert-iOS */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -213,6 +216,14 @@
 				3FEC6CCD1D6E3D9700F448AE /* Config.txt */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		3FEC6CD91D6FA42100F448AE /* SweetAlert-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC6CDA1D6FA49100F448AE /* SweetAlert.swift */,
+			);
+			name = "SweetAlert-iOS";
 			sourceTree = "<group>";
 		};
 		F2A0FB2E2B4CD560CA12DCB5 /* Frameworks */ = {
@@ -352,6 +363,7 @@
 				3FEC6CC61D6DB67C00F448AE /* BaseViewController.swift in Sources */,
 				3FEC6CD61D6E4A7000F448AE /* UIViewControllerExtension.swift in Sources */,
 				3FEC6CC91D6E390500F448AE /* CreateFileViewController.swift in Sources */,
+				3FEC6CDB1D6FA49100F448AE /* SweetAlert.swift in Sources */,
 				3FEC6CD01D6E3DCF00F448AE /* ConfigUtils.swift in Sources */,
 				3FEC6CD81D6E5B6E00F448AE /* BaseXLFormViewController.swift in Sources */,
 				3FEC6CB61D6D0DE300F448AE /* CYRLayoutManager.m in Sources */,

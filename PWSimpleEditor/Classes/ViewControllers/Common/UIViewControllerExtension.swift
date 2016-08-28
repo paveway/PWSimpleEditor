@@ -60,4 +60,74 @@ extension UIViewController {
 
         bannerView.loadRequest(request)
     }
+
+    func showAlert(title: String, message: String, okButtonTitle: String = "OK", action: (() -> Void)? = nil) {
+        let sweetAlert = SweetAlert()
+        sweetAlert.showAlert(title, subTitle: message, style: AlertStyle.None, buttonTitle: okButtonTitle, action: { (isOtherButton: Bool) -> Void in
+            if !isOtherButton {
+                action?()
+            }
+        })
+    }
+
+    /**
+     アラートを表示する。
+     キャンセルボタンも表示する。
+
+     - Parameter title: タイトル
+     - Parameter message: メッセージ
+     - Parameter okButtonTitle: OKボタンタイトル(デフォルト"OK")
+     - Parameter cancelButtonTitle: キャンセルボタンタイトル(デフォルト"キャンセル")
+     - Parameter handler: OKボタン押下時の処理
+     */
+    func showAlertWithCancel(title: String, message: String, okButtonTitle: String = "OK", cancelButtonTitle: String = "キャンセル", action: (() -> Void)? = nil) {
+        // アラートを表示する。
+        let sweetAlert = SweetAlert()
+        sweetAlert.showAlert(title, subTitle: message, style: AlertStyle.Warning, buttonTitle: cancelButtonTitle, buttonColor: UIColor.colorFromRGB(0xD0D0D0), otherButtonTitle: okButtonTitle, otherButtonColor: UIColor.peterRiverColor(), action: { (isOtherButton: Bool) -> Void in
+            if !isOtherButton {
+                action?()
+            }
+        })
+    }
+
+    /**
+     削除確認アラートを表示する。
+
+     - Parameter name: 削除対象の名前
+     */
+    func showDeleteConfirmAlert(name: String, action: () -> Void) {
+        let title = "確認"
+        let message = "\(name)を削除しますか"
+        let deleteButonTitle = "削除"
+        showAlertWithCancel(title, message: message, okButtonTitle: deleteButonTitle, action: action)
+    }
+
+    /**
+     エラーアラートを表示する
+
+     - Parameter message: メッセージ
+     - Parameter action: OKボタン押下時の処理(デフォルトなし)
+     */
+    func showErrorAlert(message: String, action: (() -> Void)? = nil) {
+        let title = "エラー"
+        let buttonTitle = "閉じる"
+        showAlert(title, message: message, okButtonTitle: buttonTitle, action: action)
+    }
+
+    /**
+     エラーアラートを表示する。
+     メインスレッドで処理する。
+
+     - Parameter title: タイトル
+     - Parameter message: メッセージ
+     - Parameter okButtonTitle: OKボタンタイトル(デフォルト"OK")
+     - Parameter action: OKボタン押下時の処理
+     */
+    func showErrorAlertAsync(message: String, action: (() -> Void)? = nil) {
+        let queue = dispatch_get_main_queue()
+        dispatch_async(queue) {
+            // アラートを表示する。
+            self.showErrorAlert(message, action: action)
+        }
+    }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import XLForm
+import FlatUIKit
 
 /**
  ファイル作成画面
@@ -24,6 +25,7 @@ class CreateFileViewController: BaseXLFormViewController {
 
     /// タグ
     struct Tags {
+        /// ファイル名行
         static let kFileNameRow = "fileNameRow"
     }
 
@@ -100,15 +102,20 @@ class CreateFileViewController: BaseXLFormViewController {
         let values = form.formValues() as NSDictionary
         let fileName = values.objectForKey(Tags.kFileNameRow) as! String
         let pathName = FileUtils.getLocalPath(File.kRootDir)
+        print(pathName)
         if FileUtils.isExist(pathName, name: fileName) {
             // 同名ファイルが存在する場合
             // エラーアラートを表示して終了する。
+            let message = "同名のファイルが存在します。"
+            showErrorAlert(message)
             return
         }
 
         if !FileUtils.write(pathName, fileName: fileName, fileData: "") {
             // ファイル作成できない場合
             // エラーアラートを表示して終了する。
+            let message = "ファイルが作成できませんでした。"
+            showErrorAlert(message)
             return
         }
 
